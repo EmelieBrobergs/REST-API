@@ -34,11 +34,12 @@ function saveProduct(req, res, next) {
 // Update product by id with PUT in DB
 const updateOneProductById = (req, res, next) => {
     const { id } = req.params;
-    const newProduct = req.body;
-    const product = products.map(item => ( item.id == id ? newProduct : item));
+    const updatedProduct = req.body;
+    const product = products.find(item => item.id == id);
     if (!product) {
         res.status(404).json(`Product with id ${id} was not found.`);
     } else {
+        Object.assign(product, updatedProduct);
         res.status(200).json(product);
     }
 }
@@ -46,11 +47,12 @@ const updateOneProductById = (req, res, next) => {
 // Delete product by id in DB
 const deleteOneProductById = (req, res, next) => {
     const id = req.params.id;
-    const product = products.find(item => item.id == id);
-    if (!product) {
+    //findIndex will return -1 if not found
+    const productIndex = products.findIndex(item => item.id == id);
+    if (productIndex == -1) {
         res.status(404).json(`Product with id ${id} was not found.`);
     } else {
-        products.splice(products.findIndex(item => item.id === id),1);
+        products.splice(productIndex, 1);
         res.status(200).json(`Product with id ${id} is deleted.`);
     }
 }
