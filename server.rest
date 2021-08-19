@@ -25,3 +25,7 @@ Content-Type: application/json
     "type": "license",
     "price": 1000
 }
+
+###
+
+DELETE http://localhost:3003/api/products/0
