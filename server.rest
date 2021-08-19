@@ -14,3 +14,14 @@ Content-Type: application/json
     "type": "license",
     "price": 1000
 }
+
+###
+PUT http://localhost:3003/api/products/0
+Content-Type: application/json
+
+{
+    "id": 0,
+    "name": "BMI",
+    "type": "license",
+    "price": 1000
+}
