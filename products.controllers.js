@@ -1,7 +1,8 @@
 const { Request, Response, NextFunction } = require('express');
+const { v4: uuidv4 } = require('uuid');
 
 // In-memort DB
-const productIdIndex = 1;
+let productIdIndex = 1;
 const products = [{
     id : 0,
     name: 'SSA',
@@ -27,8 +28,9 @@ const getOneProductById = (req, res, next) => {
 
 // Save a new product to the DB
 function saveProduct(req, res, next) {
-    products.push(req.body);
-    res.json(req.body);
+    const product = { ...req.body, id: productIdIndex++ };
+    products.push(product);
+    res.json(product);
 }
 
 // Update product by id with PUT in DB
@@ -47,7 +49,7 @@ const updateOneProductById = (req, res, next) => {
 // Delete product by id in DB
 const deleteOneProductById = (req, res, next) => {
     const id = req.params.id;
-    //findIndex will return -1 if not found
+    //.findIndex will return -1 if not found
     const productIndex = products.findIndex(item => item.id == id);
     if (productIndex == -1) {
         res.status(404).json(`Product with id ${id} was not found.`);
