@@ -1,8 +1,9 @@
 const { Request, Response, NextFunction } = require('express');
-const { v4: uuidv4 } = require('uuid');
+
+// Create unique id with (v1) timestamp
+const { v1: uuidv1 } = require('uuid');
 
 // In-memort DB
-let productIdIndex = 1;
 const products = [{
     id : 0,
     name: 'SSA',
@@ -28,7 +29,7 @@ const getOneProductById = (req, res, next) => {
 
 // Save a new product to the DB
 function saveProduct(req, res, next) {
-    const product = { ...req.body, id: productIdIndex++ };
+    const product = { ...req.body, id: uuidv1() };
     products.push(product);
     res.json(product);
 }
