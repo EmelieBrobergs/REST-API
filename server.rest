@@ -1,0 +1,16 @@
+GET http://localhost:3003/api/products
+
+###
+
+GET http://localhost:3003/api/products/0
+
+###
+
+POST http://localhost:3003/api/products
+Content-Type: application/json
+
+{
+    "name": "OLA",
+    "type": "license",
+    "price": 1000
+}
