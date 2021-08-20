@@ -1,13 +1,34 @@
 # REST-API
 REST-API in NodeJS with express
 
-README-filen ska innehålla:
-* Titel
-* Beskrivning
-* Vilka krav som är uppfyllda
-* info om hur projektet byggs och körs
+
+## Beskrivning
+    ***Uppgift 3: Individuell inlämning i kursen Webbutveckling.***
+    Projektet består av en resurs, ***product***, som har egenskaperna: id, name, type, price. Vad de olika egenskaperna lagrar för typ av information valideras genom funktion i ***product.validation.js***. Sparad data lagras lokalt i serverfilen.
+
+## Vilka krav som är uppfyllda
+    Krav för godkänt:
+    1. JA
+    2. JA
+    3. JA, brutit ut så den ligger i ***products.controller.js***
+    4. JA, tränat på att skapa branches
+    5. JA
+    6. JA, hoppas det..
+
+    Krav för väl godkänt:
+    1. JA
+    2. 
+    3. 
+    4. 
+    5. JA
+
+## info om hur projektet byggs och körs
+    Glöm inte skriva ngt här..!
 
 
+
+
+### Uppgiftsbeskrivning
 
 Krav för godkänt:
 1. Projektet innehåller minst 4 st. endpoints (GET, POST, PUT & DELETE för en resurs)
