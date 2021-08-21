@@ -3,14 +3,14 @@ const { getProducts, getOneProductById, saveProduct, updateOneProductById, delet
 const { saveProductValidation } = require('./products.validation');
 
 // Create the router object
-const productRouter = express.Router();
+const router = express.Router();
 
 // Define our endpoints
-productRouter.get('/api/products', getProducts);
-productRouter.get('/api/products/:id', getOneProductById);
-productRouter.post('/api/products', saveProductValidation, saveProduct);
-productRouter.put('/api/products/:id', saveProductValidation, updateOneProductById);
-productRouter.delete('/api/products/:id', deleteOneProductById);
+router.get('/api/products', getProducts);
+router.get('/api/products/:id', getOneProductById);
+router.post('/api/products', saveProductValidation, saveProduct);
+router.put('/api/products/:id', saveProductValidation, updateOneProductById);
+router.delete('/api/products/:id', deleteOneProductById);
 
 // Export the router object
-module.exports = productRouter;
+module.exports = router;

@@ -1,4 +1,5 @@
-const { body, validationResult } = require('express-validator');
+const { check, body, validationResult, oneOf } = require('express-validator');
+
 
 // used by validation object below
 function checkValidation(req, res, next) {
@@ -15,6 +16,10 @@ const saveProductValidation = [
     body('name').notEmpty(),
     body('type').notEmpty().isString(),
     body('price').isFloat({min: 0}),
+    oneOf([
+        check('type').equals('license'),
+        check('type').equals('lifeTime')
+    ], 'Invalid: Type can be either "license" or "lifeTime"'),
     checkValidation
 ];
 
