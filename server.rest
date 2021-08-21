@@ -2,7 +2,7 @@ GET http://localhost:3003/api/products
 
 ###
 
-GET http://localhost:3003/api/products/0
+GET http://localhost:3003/api/products/93606410-01bc-11ec-a4e7-0dba1c0c7326
 
 ###
 
@@ -10,22 +10,46 @@ POST http://localhost:3003/api/products
 Content-Type: application/json
 
 {
-    "name": "OLA",
+    "name": "SMART",
     "type": "license",
     "price": 1000
 }
 
 ###
-PUT http://localhost:3003/api/products/0
+
+POST http://localhost:3003/api/products
 Content-Type: application/json
 
 {
-    "id": 0,
-    "name": "BMI",
-    "type": "license",
+    "name": "KMR EJ FUNKA",
+    "type": "hej",
     "price": 1000
+}
+
+
+###
+
+POST http://localhost:3003/api/products
+Content-Type: application/json
+
+{
+    "name": "SMART",
+    "type": "lifeTime",
+    "price": 1000
+}
+
+
+###
+PUT http://localhost:3003/api/products/93606410-01bc-11ec-a4e7-0dba1c0c7326
+Content-Type: application/json
+
+{
+    "id": "93606410-01bc-11ec-a4e7-0dba1c0c7326",
+    "name": "PUT justerad",
+    "type": "license",
+    "price": 10
 }
 
 ###
 
-DELETE http://localhost:3003/api/products/0
+DELETE http://localhost:3003/api/products/7f7c1df0-02a6-11ec-afe4-e3aafa016c20
