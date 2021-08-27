@@ -1,22 +1,26 @@
 window.addEventListener('load', main);
 
 function main() {
-    fetchProducts();
+    //fetchProducts();
     
     //GET ALL
     const buttonProducts = document.getElementById('showAllProducts');
     buttonProducts.addEventListener('click', fetchProducts);
 
+    //GET BY ID
+    const formSearch = document.getElementById('formSearch');
+    formSearch.addEventListener('submit', onSearchSubmit);
+
     //POST
-    var form = document.getElementById('form');
-    form = addEventListener('submit', onSubmit);
+    let form = document.getElementById('form');
+    form = addEventListener('submit', onPostSubmit);
 }
 
 //TODO: Dela upp funktion i två ?
 async function fetchProducts() {
     let products = "";
     try {
-        var response = await fetch('http://localhost:3003/api/products');
+        let response = await fetch('http://localhost:3003/api/products');
         products = await response.json();
     } catch (error) {
         //TODO: Felmeddelande?
@@ -24,23 +28,66 @@ async function fetchProducts() {
     }
 
     resetProducsList();
-
-    for (const product of products) {
-        const ol = document.getElementById("products");
+    setHeadlineText("Product list");
+    if (products) {
+        for (const product of products) {
+            const ol = document.getElementById("presentation-list");
+            const p = document.createElement("p");
+            const li = document.createElement("li");
+            p.innerText = `Name: ${product.name}, Type: ${product.type}, Price: ${product.price}, Id: ${product.id}`;
+            li.appendChild(p);
+            ol.appendChild(li);
+        }
+    }else {
+        const ol = document.getElementById("presentation-list");
         const p = document.createElement("p");
-        const li = document.createElement("li");
-        p.innerText = `Name: ${product.name}, Type: ${product.type}, Price: ${product.price}`;
-        li.appendChild(p);
-        ol.appendChild(li);
+        p.innerText = `No products are saved in file: products.json`;
+        ol.appendChild(p);
     }
+
 }
 
 function resetProducsList() {
-    document.getElementById('products').innerHTML = "";
+    document.getElementById('presentation-list').innerHTML = "";
 }
 
-// En submithandler...
-function onSubmit(event) {
+function setHeadlineText(headline) {
+    document.getElementById('headline-text').innerHTML = `${headline}`;
+}
+
+// Submithandler GET by id
+async function onSearchSubmit(event) {
+    event.preventDefault();
+    let formData = new FormData(event.target);
+    let jsonData = JSON.stringify(Object.fromEntries(formData));
+    let product = "";
+    try {
+        let response = await fetch(`http://localhost:3003/api/products/${jsonData.id}`);
+        product = await response.json();
+    } catch (error) {
+        //TODO: Felmedelande ?
+        console.log(error);
+    }
+    resetProducsList();
+    setHeadlineText("Search result");
+    if (product) {
+        //TODO: Förutsätter nu att bara en produkt hittas..
+            const ol = document.getElementById("presentation-list");
+            const p = document.createElement("p");
+            const li = document.createElement("li");
+            p.innerText = `Name: ${product.name}, Type: ${product.type}, Price: ${product.price}, Id: ${product.id}`;
+            li.appendChild(p);
+            ol.appendChild(li);
+    }else {
+        const ol = document.getElementById("presentation-list");
+        const p = document.createElement("p");
+        p.innerText = `No products found with id "${jsonData.id}"`;
+        ol.appendChild(p);
+    }
+}
+
+// Submithandler POST
+function onPostSubmit(event) {
     event.preventDefault();
     let formData = new FormData(event.target);
     let jsonData = JSON.stringify(Object.fromEntries(formData));
