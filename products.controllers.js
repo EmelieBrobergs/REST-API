@@ -50,10 +50,14 @@ const getOneProductById = async function(req, res) {
  */
 const saveProduct = async function(req, res) {
     try {
-        const newProduct = { ...req.body, id: uuidv1() };
+        //TODO: req är undefined från webben, body kmr inte in..
+        console.log(req.stringify);
+        const newProduct = await { ...req.body, id: uuidv1() };
         const data = await fs.readFile('products.json');
         let products = JSON.parse(data);
+        console.log("saveProduct - products:" + products)
         products.push(newProduct);
+        console.log("saveProduct - newProduct:" + products)
         
         await saveArray(products, 'products.json');
         res.status(200).json('Product added to JSON-file.');

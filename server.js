@@ -1,8 +1,12 @@
 const express = require('express');
 const productsRouter = require('./products.router');
+const cors = require('cors');
 
 //Create server application
 const app = express();
+
+//Added to make it posible to send request from web....
+app.use(cors());
 
 //Pars incomin JSON
 app.use(express.json());

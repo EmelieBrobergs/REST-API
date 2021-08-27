@@ -1,8 +1,35 @@
 [
   {
-    "name": "PUT justerad",
+    "name": "Testar lite",
     "type": "license",
-    "price": 10,
-    "id": "93606410-01bc-11ec-a4e7-0dba1c0c7326"
+    "price": "10",
+    "id": "21cffdc0-0706-11ec-8f4e-858aa322413a"
+  },
+  {
+    "id": "3d2ee180-070b-11ec-8324-b1ceddb409e9"
+  },
+  {
+    "name": "KMR EJ FUNKA",
+    "type": "hej",
+    "price": 1000,
+    "id": "106166e0-0711-11ec-b772-a577bbe4c662"
+  },
+  {
+    "name": "KMR EJ FUNKA",
+    "type": "hej",
+    "price": 1000,
+    "id": "a60051c0-0711-11ec-95fd-dd1006f36fcb"
+  },
+  {
+    "name": "PLM",
+    "type": "license",
+    "price": "10000000",
+    "id": "06bb32a0-0712-11ec-8c34-45633b22db16"
+  },
+  {
+    "name": "DEn nyaste",
+    "type": "license",
+    "price": "4355",
+    "id": "d46daaa0-0714-11ec-8304-bb3fedfebedf"
   }
 ]

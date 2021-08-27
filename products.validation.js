@@ -15,7 +15,7 @@ function checkValidation(req, res, next) {
 const saveProductValidation = [
     body('name').notEmpty(),
     body('type').notEmpty().isString(),
-    body('price').isFloat({min: 0}),
+    //body('price').isFloat({min: 0}),
     oneOf([
         check('type').equals('license'),
         check('type').equals('lifeTime')
