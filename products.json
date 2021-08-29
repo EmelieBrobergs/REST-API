@@ -1,14 +1,32 @@
 [
   {
-    "name": "KMR EJ FUNKA",
-    "type": "hej",
-    "price": 1000,
-    "id": "106166e0-0711-11ec-b772-a577bbe4c662"
+    "name": "mmmm",
+    "type": "lifeTime",
+    "price": 49498,
+    "id": "d4afee90-08e7-11ec-ba32-51e9755e0e52"
   },
   {
-    "name": "emelie broberg",
+    "name": "hello",
     "type": "license",
-    "price": 300,
-    "id": "c892dad0-08d0-11ec-b7ec-61c6da3ae604"
+    "price": 9999,
+    "id": "f1fc4740-08e8-11ec-b83d-1370c6801185"
+  },
+  {
+    "name": "hello",
+    "type": "license",
+    "price": 9999,
+    "id": "f1fc4740-08e8-11ec-b83d-1370c6801185"
+  },
+  {
+    "name": "Enelie",
+    "type": "license",
+    "price": 44,
+    "id": "940cf790-08ea-11ec-abb4-6dde8835d495"
+  },
+  {
+    "name": "test",
+    "type": "license",
+    "price": 44,
+    "id": "9f1e5f20-08ea-11ec-a83c-f70e002d0475"
   }
 ]

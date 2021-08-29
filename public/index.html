@@ -17,9 +17,13 @@
       <section>
         <nav>
           <ul>
-            <li><button id="showAllProducts">Show all products</button></li>
+            <li>
+              <h3>Show all products</h3>
+              <button id="showAllProducts">Load products</button>
+            </li>
             <hr>
             <li>
+              <h3>Add product</h3>
                 <form id="formPost" onclick="">
                   <label for="name">Name: </label><br>
                   <input type="text" name="name" placeholder="Ange namn"><br>
@@ -31,14 +35,19 @@
                 </form>
             </li>
             <hr>
-            <li><p>Klick on product list-number to delete</p></li>
+            <li>
+              <h3>Delete product</h3>
+              <p>Klick on Show all products, then klick on the list-number.</p>
+            </li>
             <hr>
             <li>
+              <h3>Search product</h3>
               <form id="formSearch">
                 <label for="id">Seach by id: </label><br>
-                <input type="text" name="id" placeholder="Ange id"><br><br>
+                <input type="text" name="id" id="productIdSearch" value="d4afee90-08e7-11ec-ba32-51e9755e0e52"><br><br>
                 <input type="submit" name="submit-search" value="Search">
               </form>
+              <button onclick="searchProduct()">Try it</button>
             </li>
           </ul>
         </nav>

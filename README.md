@@ -28,7 +28,11 @@ REST-API in NodeJS with express
 
     Det publika gränssnittet** startas separat genom hmk i index.html-filen och välj "open with live server". Det byggs mha script.js och sylas med länkade css filer.
 
-    **Publika gränssnittet är inte komplett och fulltfungerande, det är en påbörjan av VG krav som ej är slutfört enligt kraven.
+    **Publika gränssnittet är inte komplett:
+        * Designen är inte användarvänlig / snygg
+        * Formulären renderar om hela sidan
+        * Add product fungerar.. men båda formulären körs egenligen vid Submit.
+        * Search by id visar bara "Undefined" (snabbt), ej sökt produkt.
 
 
 

@@ -2,7 +2,7 @@ GET http://localhost:3003/api/products
 
 ###
 
-GET http://localhost:3003/api/products/93606410-01bc-11ec-a4e7-0dba1c0c7326
+GET http://localhost:3003/api/products/f1fc4740-08e8-11ec-b83d-1370c6801185
 
 ###
 

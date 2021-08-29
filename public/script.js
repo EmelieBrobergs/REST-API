@@ -72,17 +72,18 @@ function setHeadlineText(headline) {
 
 // Submithandler GET by id
 async function onSearchSubmit(event) {
-    if(event.preventDefault()) {
+    // if(event.preventDefault()) {
         event.preventDefault();
-        return false;
-    }
+    //     return false;
+    // }
+    //let searchProduct = document.getElementById('productIdSearch').nodeValue;
     let formData = new FormData(event.target);
     let jsonData = JSON.stringify(Object.fromEntries(formData));
-    console.log(jsonData.id);
+    // console.log(jsonData.id);
     let product = "";
     try {
         //TODO: ta ut text med endast id, inte json-format !
-        let response = await fetch(`http://localhost:3003/api/products/${jsonData.id}`);
+        let response = await fetch(`http://localhost:3003/api/products/${jsonData['id']}`);
         product = await response.json();
     } catch (error) {
         //TODO: Felmedelande ?
@@ -91,7 +92,6 @@ async function onSearchSubmit(event) {
     resetProducsList();
     setHeadlineText("Search result");
     if (product) {
-        //TODO: Förutsätter nu att bara en produkt hittas..
             const ol = document.getElementById("presentation-list");
             const p = document.createElement("p");
             const li = document.createElement("li");
@@ -106,9 +106,28 @@ async function onSearchSubmit(event) {
     }
 }
 
+async function searchProduct() {
+    const input = document.getElementById('formSearch');
+    const text = input.elements[0].value;
+
+    let response = await fetch(`http://localhost:3003/api/products/${text}`);
+    const product = await response.json();
+
+    resetProducsList();
+    setHeadlineText("Search result");
+
+    const ol = document.getElementById("presentation-list");
+    const p = document.createElement("p");
+    p.innerText = `Name: ${product.name} Type: ${product.type}, Price: ${product.price}, Id: ${product.id}`;
+    ol.appendChild(p);
+}
+
 // Submithandler POST
 function onPostSubmit(event) {
-    event.preventDefault();
+    if(event.preventDefault()) {
+        event.preventDefault();
+        return false;
+    }
     let formData = new FormData(event.target);
     let jsonData = JSON.stringify(Object.fromEntries(formData));
     console.log("JSON DATA: " + jsonData.toString());

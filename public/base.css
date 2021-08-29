@@ -24,6 +24,11 @@
     align-items: center;
 }
 
+h3 {
+    font-size: small;
+    padding-bottom: .5rem;
+}
+
 a {
     color: var(--color-one);
     text-decoration: none;
