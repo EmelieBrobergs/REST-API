@@ -24,15 +24,16 @@ REST-API in NodeJS with express
 
 ## info om hur projektet byggs och körs
     REST-API körs på localhost port 3003, startas genom komandot "npm start" i terminalen
-    Api är byggt för att hantera data i json-format. Det läser från och skirver till filen products.json.
+    Api är byggt för att hantera data i json-format. Det läser från och skirver till filen products.json. För att skriva data till filen i korrekt format används en validerings funktioner för json parametrarna.
 
     Det publika gränssnittet** startas separat genom hmk i index.html-filen och välj "open with live server". Det byggs mha script.js och sylas med länkade css filer.
 
     **Publika gränssnittet är inte komplett:
         * Designen är inte användarvänlig / snygg
-        * Formulären renderar om hela sidan
-        * Add product fungerar.. men båda formulären körs egenligen vid Submit.
-        * Search by id visar bara "Undefined" (snabbt), ej sökt produkt.
+        * Hantera felmedelanden från api saknas
+        * Search by id når inte sitt else-block när match saknas
+        * Fullösning med knapp på Search-formulär då det krockade att ha två st Submit formulär, båda laddades..
+        * Gränssnitt för endpoint PUT saknas
 
 
 

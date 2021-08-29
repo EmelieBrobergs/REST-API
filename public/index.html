@@ -31,23 +31,22 @@
                   <input type="text" name="type" placeholder="Skriv license eller lifeTime"><br>
                   <label for="price">Price: </label><br>
                   <input type="number" step="0.1" name="price" placeholder="skriv siffra större än 0"><br><br>
-                  <input type="submit" name="submit-product" value="Submit">
+                  <input type="submit" name="submit-product" value="Submit & rerender list">
                 </form>
             </li>
             <hr>
             <li>
               <h3>Delete product</h3>
-              <p>Klick on Show all products, then klick on the list-number.</p>
+              <p>Klick on Show all products, then klick on the list.</p>
             </li>
             <hr>
             <li>
               <h3>Search product</h3>
               <form id="formSearch">
                 <label for="id">Seach by id: </label><br>
-                <input type="text" name="id" id="productIdSearch" value="d4afee90-08e7-11ec-ba32-51e9755e0e52"><br><br>
-                <input type="submit" name="submit-search" value="Search">
+                <input type="text" name="id" value=""><br><br>
               </form>
-              <button onclick="searchProduct()">Try it</button>
+              <button id="formSearchButton">Search</button>
             </li>
           </ul>
         </nav>
