@@ -1,8 +1,14 @@
 [
   {
-    "name": "PUT justerad",
+    "name": "Svan",
     "type": "license",
-    "price": 10,
-    "id": "93606410-01bc-11ec-a4e7-0dba1c0c7326"
+    "price": 33,
+    "id": "603a98c0-08f7-11ec-b121-3ba0f9b2341b"
+  },
+  {
+    "name": "Emelie",
+    "type": "lifeTime",
+    "price": 1994,
+    "id": "960f27d0-08f8-11ec-bcce-6d39bdc66a16"
   }
 ]

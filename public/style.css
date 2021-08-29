@@ -1,0 +1,79 @@
+header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--color-background-one);
+    opacity: 0.95;
+    height: var(--header-height);
+    padding-top: 0.6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+header > h2 {
+color: var(--color-one);
+}
+
+section {
+    min-height: calc(100vh - var(--header-height));
+    margin-top: var(--header-height);
+    background-color: var(--color-background-two);
+
+    display: -webkit-flex;
+    display: flex;
+}
+
+
+article {
+    -webkit-flex: 3;
+    -ms-flex: 3;
+    flex: 3;
+    background-color: #334756;
+    padding: 1rem;
+    padding-left: 3rem;
+}
+
+nav {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    background: #2C394B;
+    padding: 20px;
+  }
+   /* Style the list inside the menu */
+   nav ul {
+    list-style-type: none;
+    padding: 0;
+    color: var(--color-two);
+  }
+
+hr {
+    border: none;
+    border-top: 3px double var(--color-two);
+    overflow: visible;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+footer {
+    background-color: var(--color-background-one);
+    opacity: 0.95;
+    height: var(--footer-height);
+    padding-top: 0.6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.6rem;
+}
+footer a {
+    font-size: small;
+}
+
+/* Responsive layout, smaller screens content placed on top of each other inside section */
+@media (max-width: 600px) {
+    section {
+      -webkit-flex-direction: column;
+      flex-direction: column;
+    }
+}

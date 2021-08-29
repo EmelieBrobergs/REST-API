@@ -44,13 +44,15 @@ const getOneProductById = async function(req, res) {
 }
 
 /**
- * Save a new product to the DB
+ * Save a new product to the JSON-file / DB
  * @param {Request} req 
  * @param {Response} res 
  */
 const saveProduct = async function(req, res) {
     try {
-        const newProduct = { ...req.body, id: uuidv1() };
+        console.log(req.stringify);
+        const newProduct = await { ...req.body, id: uuidv1(), price: parseInt(req.body.price) };
+
         const data = await fs.readFile('products.json');
         let products = JSON.parse(data);
         products.push(newProduct);
@@ -64,7 +66,7 @@ const saveProduct = async function(req, res) {
 }
 
 /**
- * Update product by id with PUT in DB
+ * Update product by id with PUT in JSON-file / DB
  * @param {Request} req 
  * @param {Response} res 
  */

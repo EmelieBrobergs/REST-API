@@ -4,7 +4,7 @@ REST-API in NodeJS with express
 
 ## Beskrivning
     ***Uppgift 3: Individuell inlämning i kursen Webbutveckling.***
-    Projektet består av en resurs, ***product***, som har egenskaperna: id, name, type, price. Vad de olika egenskaperna lagrar för typ av information valideras genom funktion i ***product.validation.js***. Sparad data lagras lokalt i serverfilen.
+    Projektet består av en resurs, ***product***, som har egenskaperna: id, name, type, price. Vad de olika egenskaperna lagrar för typ av information valideras genom funktion i ***product.validation.js***. Sparad data lagras i json format i ***products.json***.
 
 ## Vilka krav som är uppfyllda
     Krav för godkänt:
@@ -13,17 +13,28 @@ REST-API in NodeJS with express
     3. JA, brutit ut så den ligger i ***products.controller.js***
     4. JA, tränat på att skapa branches
     5. JA
-    6. JA, hoppas det..
+    6. JA,
 
     Krav för väl godkänt:
     1. JA
-    2. 
-    3. 
-    4. 
+    2. JA
+    3. JA
+    4. NEJ - endast påbörjad
     5. JA
 
 ## info om hur projektet byggs och körs
-    Glöm inte skriva ngt här..!
+    REST-API körs på localhost port 3003, startas genom komandot "npm start" i terminalen
+    Api är byggt för att hantera data i json-format. Det läser från och skirver till filen products.json. För att skriva data till filen i korrekt format används en validerings funktioner för json parametrarna.
+
+    Det publika gränssnittet** startas separat genom hmk i index.html-filen och välj "open with live server". Det byggs mha script.js och sylas med länkade css filer.
+
+    **Publika gränssnittet är inte komplett:
+        * Designen är inte användarvänlig / snygg
+        * Hantera felmedelanden från api saknas
+        * Search by id når inte sitt else-block när match saknas
+        * Fullösning med knapp på Search-formulär då det krockade att ha två st Submit formulär, båda laddades..
+        * Gränssnitt för endpoint PUT saknas
+
 
 
 
