@@ -1,11 +1,5 @@
 [
   {
-    "name": "Testar lite",
-    "type": "license",
-    "price": "10",
-    "id": "21cffdc0-0706-11ec-8f4e-858aa322413a"
-  },
-  {
     "name": "KMR EJ FUNKA",
     "type": "hej",
     "price": 1000,
@@ -16,11 +10,5 @@
     "type": "license",
     "price": 300,
     "id": "c892dad0-08d0-11ec-b7ec-61c6da3ae604"
-  },
-  {
-    "name": "emelie wow",
-    "type": "license",
-    "price": 44,
-    "id": "db2c8330-08d0-11ec-b11f-95605e8b2c99"
   }
 ]

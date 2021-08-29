@@ -9,11 +9,14 @@ function main() {
 
     //GET BY ID
     const formSearch = document.getElementById('formSearch');
-    formSearch.addEventListener('search', onSearchSubmit);
+    formSearch.addEventListener('submit', onSearchSubmit);
 
     //POST
-    let form = document.getElementById('form');
+    let form = document.getElementById('formPost');
     form = addEventListener('submit', onPostSubmit);
+
+    //DELETE
+    //Added to <li> when created
 }
 
 //TODO: Dela upp funktion i två ?
@@ -34,7 +37,7 @@ async function fetchProducts() {
             const ol = document.getElementById("presentation-list");
             const p = document.createElement("p");
             const li = document.createElement("li");
-            li.classList.add(product.id); //added for delete-function
+            li.addEventListener('click', () => deleteProduct(product.id));
             p.innerText = `Name: ${product.name}, Type: ${product.type}, Price: ${product.price}, Id: ${product.id}`;
             li.appendChild(p);
             ol.appendChild(li);
@@ -46,6 +49,17 @@ async function fetchProducts() {
         ol.appendChild(p);
     }
 
+}
+
+async function deleteProduct(productId) {
+    fetch(`http://localhost:3003/api/products/${productId}`, 
+    {
+        method: "DELETE", 
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    });
 }
 
 function resetProducsList() {
@@ -67,6 +81,7 @@ async function onSearchSubmit(event) {
     console.log(jsonData.id);
     let product = "";
     try {
+        //TODO: ta ut text med endast id, inte json-format !
         let response = await fetch(`http://localhost:3003/api/products/${jsonData.id}`);
         product = await response.json();
     } catch (error) {
@@ -96,7 +111,6 @@ function onPostSubmit(event) {
     event.preventDefault();
     let formData = new FormData(event.target);
     let jsonData = JSON.stringify(Object.fromEntries(formData));
-    //TODO: alla parametrar blir av typen string, price till int/float? så validering funkar
     console.log("JSON DATA: " + jsonData.toString());
     fetch('http://localhost:3003/api/products', 
     {
