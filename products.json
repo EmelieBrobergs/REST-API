@@ -6,84 +6,21 @@
     "id": "21cffdc0-0706-11ec-8f4e-858aa322413a"
   },
   {
-    "id": "3d2ee180-070b-11ec-8324-b1ceddb409e9"
-  },
-  {
     "name": "KMR EJ FUNKA",
     "type": "hej",
     "price": 1000,
     "id": "106166e0-0711-11ec-b772-a577bbe4c662"
   },
   {
-    "name": "KMR EJ FUNKA",
-    "type": "hej",
-    "price": 1000,
-    "id": "a60051c0-0711-11ec-95fd-dd1006f36fcb"
-  },
-  {
-    "name": "PLM",
+    "name": "emelie broberg",
     "type": "license",
-    "price": "10000000",
-    "id": "06bb32a0-0712-11ec-8c34-45633b22db16"
+    "price": 300,
+    "id": "c892dad0-08d0-11ec-b7ec-61c6da3ae604"
   },
   {
-    "name": "DEn nyaste",
+    "name": "emelie wow",
     "type": "license",
-    "price": "4355",
-    "id": "d46daaa0-0714-11ec-8304-bb3fedfebedf"
-  },
-  {
-    "name": "hej",
-    "type": "lifeTime",
-    "price": "88",
-    "id": "9215d4b0-0738-11ec-91c6-e5a2bcbe6452"
-  },
-  {
-    "name": "mm",
-    "type": "ggg",
-    "price": "66",
-    "id": "9e5ed510-073c-11ec-b41a-1b8de759d25f"
-  },
-  {
-    "name": "kkk",
-    "type": "kkk",
-    "price": "77",
-    "id": "aa0cf1d0-073c-11ec-911b-57a45e35e2b1"
-  },
-  {
-    "id": "f153f1e0-073e-11ec-9262-97909fd4201f"
-  },
-  {
-    "id": "422e2fe0-073f-11ec-acf0-e7fa0c383155"
-  },
-  {
-    "id": "597cdf60-0740-11ec-9ffd-a7b226d559ee"
-  },
-  {
-    "id": "63c29280-0740-11ec-aa3b-dd42edfbc5d4"
-  },
-  {
-    "id": "674a59b0-0740-11ec-8f53-6fb7bb35110d"
-  },
-  {
-    "name": "",
-    "type": "",
-    "price": "",
-    "id": "7282aa30-0740-11ec-9cf4-a7e852d4bffa"
-  },
-  {
-    "id": "f9634030-0742-11ec-9fca-0d49ec9e8536"
-  },
-  {
-    "id": "03f00e70-0743-11ec-b457-9b1ca1d1048c"
-  },
-  {
-    "id": "08511ea0-0743-11ec-997a-674f3974655d"
-  },
-  {
-    "id": "25cdcb90-0743-11ec-a0c4-5d6daccd3491"
-  },
-  {
-    "id": "5f030740-0743-11ec-b91e-397b2380a9d1"
+    "price": 44,
+    "id": "db2c8330-08d0-11ec-b11f-95605e8b2c99"
   }
 ]

@@ -8,8 +8,7 @@ const router = express.Router();
 // Define our endpoints
 router.get('/api/products', getProducts);
 router.get('/api/products/:id', getOneProductById);
-router.post('/api/products', saveProduct);
-// router.post('/api/products', saveProductValidation, saveProduct);
+router.post('/api/products', saveProductValidation, saveProduct);
 router.put('/api/products/:id', saveProductValidation, updateOneProductById);
 router.delete('/api/products/:id', deleteOneProductById);
 

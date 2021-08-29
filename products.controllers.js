@@ -44,20 +44,18 @@ const getOneProductById = async function(req, res) {
 }
 
 /**
- * Save a new product to the DB
+ * Save a new product to the JSON-file / DB
  * @param {Request} req 
  * @param {Response} res 
  */
 const saveProduct = async function(req, res) {
     try {
-        //TODO: req är undefined från webben, body kmr inte in..
         console.log(req.stringify);
-        const newProduct = await { ...req.body, id: uuidv1() };
+        const newProduct = await { ...req.body, id: uuidv1(), price: parseInt(req.body.price) };
+
         const data = await fs.readFile('products.json');
         let products = JSON.parse(data);
-        console.log("saveProduct - products:" + products)
         products.push(newProduct);
-        console.log("saveProduct - newProduct:" + products)
         
         await saveArray(products, 'products.json');
         res.status(200).json('Product added to JSON-file.');
@@ -68,7 +66,7 @@ const saveProduct = async function(req, res) {
 }
 
 /**
- * Update product by id with PUT in DB
+ * Update product by id with PUT in JSON-file / DB
  * @param {Request} req 
  * @param {Response} res 
  */

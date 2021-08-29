@@ -1,69 +1,77 @@
-* {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  /* Style the header */
-  header {
-    background-color: #666;
-    padding: 30px;
-    text-align: center;
-    font-size: 35px;
-    color: white;
-  }
-  
-  /* Container for flexboxes */
-  section {
+header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--color-background-one);
+    opacity: 0.95;
+    height: var(--header-height);
+    padding-top: 0.6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+header > h2 {
+color: var(--color-one);
+}
+
+section {
+    min-height: calc(100vh - var(--header-height));
+    margin-top: var(--header-height);
+    background-color: var(--color-background-two);
+
     display: -webkit-flex;
     display: flex;
-  }
-  
-  /* Style the navigation menu */
-  nav {
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    background: #ccc;
-    padding: 20px;
-  }
-  
-  /* Style the list inside the menu */
-  nav ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  /* Style the content */
-  article {
+}
+
+
+article {
     -webkit-flex: 3;
     -ms-flex: 3;
     flex: 3;
-    background-color: #f1f1f1;
-    padding: 10px;
+    background-color: #334756;
+    padding: 1rem;
+    padding-left: 3rem;
+}
+
+nav {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    background: #2C394B;
+    padding: 20px;
   }
-  
-  /* Style the footer */
-  footer {
-    background-color: #777;
-    padding: 10px;
-    text-align: center;
-    color: white;
+   /* Style the list inside the menu */
+   nav ul {
+    list-style-type: none;
+    padding: 0;
+    color: var(--color-two);
   }
 
-  hr {
+hr {
     border: none;
-    border-top: 3px double #333;
-    color: #333;
+    border-top: 3px double var(--color-two);
     overflow: visible;
-    text-align: center;
-    height: 5px;
-    }
-  
-  /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
-  @media (max-width: 600px) {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+footer {
+    background-color: var(--color-background-one);
+    opacity: 0.95;
+    height: var(--footer-height);
+    padding-top: 0.6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.6rem;
+}
+footer a {
+    font-size: small;
+}
+
+/* Responsive layout, smaller screens content placed on top of each other inside section */
+@media (max-width: 600px) {
     section {
       -webkit-flex-direction: column;
       flex-direction: column;

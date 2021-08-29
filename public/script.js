@@ -9,7 +9,7 @@ function main() {
 
     //GET BY ID
     const formSearch = document.getElementById('formSearch');
-    formSearch.addEventListener('submit', onSearchSubmit);
+    formSearch.addEventListener('search', onSearchSubmit);
 
     //POST
     let form = document.getElementById('form');
@@ -34,6 +34,7 @@ async function fetchProducts() {
             const ol = document.getElementById("presentation-list");
             const p = document.createElement("p");
             const li = document.createElement("li");
+            li.classList.add(product.id); //added for delete-function
             p.innerText = `Name: ${product.name}, Type: ${product.type}, Price: ${product.price}, Id: ${product.id}`;
             li.appendChild(p);
             ol.appendChild(li);
@@ -57,9 +58,13 @@ function setHeadlineText(headline) {
 
 // Submithandler GET by id
 async function onSearchSubmit(event) {
-    event.preventDefault();
+    if(event.preventDefault()) {
+        event.preventDefault();
+        return false;
+    }
     let formData = new FormData(event.target);
     let jsonData = JSON.stringify(Object.fromEntries(formData));
+    console.log(jsonData.id);
     let product = "";
     try {
         let response = await fetch(`http://localhost:3003/api/products/${jsonData.id}`);

@@ -1,0 +1,35 @@
+:root {
+    --header-height: 3rem;
+    --footer-height: 2rem;
+
+    --color-link: #7a9bc7;
+    --color-one: white;
+    --color-two:#0e0e0e; 
+    --color-background-one:#0e0e0e; 
+    --color-background-two: rgba(146, 119, 134, 0.515);
+
+}
+
+*{
+    font-family: 'Noto Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* base css classes */
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    color: var(--color-one);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--color-link);
+}
